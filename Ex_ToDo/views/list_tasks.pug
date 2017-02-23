@@ -1,21 +1,30 @@
 extend layout
+block navigation
+	div(class='navigation')
+		ul(class='listNavigation')
+			li
+				a(class='activeLink', href='/') List tasks
+			li
+				a(href='/completed') Completed
+
 block title
 	h1.
 		#{ title }
 
 block content
-	form(action='/', method='post')
-		a(type='button', href='/alldone') all done
+	form(class='formTask', action='/', method='post')
+		a(class='buttonDone', href='/alldone') all done
 		|
 		input(type='text', placeholder='Add a new task', name='addTask')
 		|
-		button(type='submit') add
-	p.
-		#{ msgTxt }
-	ul.list-group
-		each task in aTasks
-			li.list-group-item
-				a(type='button', href='/done/' + aTasks.indexOf(task)) done
-				span= task.name
-				span= task.create
-				a(type='button', href='/delete/' + aTasks.indexOf(task)) delete
+		button(class= 'buttonSubmit', type='submit') add
+
+	div(class='listTask')
+		p.
+			#{ msgTxt }
+		ul.list-group
+			each task in aTasks
+				li.list-group-item
+					a(class='buttonDone', href='/done/' + aTasks.indexOf(task)) done
+					span= "  " + task.id + ". " + task.name + " " + task.create + "  "
+					a(class='buttonDelete', href='/delete/' + aTasks.indexOf(task)) delete

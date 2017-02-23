@@ -2,18 +2,11 @@ doctype html
 html
   head
     title=title
-  style(type='text/css', media='screen').
-    li {
-    list-style: none;
-    }
+    link(rel='stylesheet', type='text/css', href='css/style.css')
   body
     .header
-      ul
-        li
-          a(href='/') List tasks
-        li
-          a(href='/completed') Completed
+      block navigation
       block title
       p Welcome to the Todo app by @me.Please enjoy.
-    .main-content
+    .section
       block content

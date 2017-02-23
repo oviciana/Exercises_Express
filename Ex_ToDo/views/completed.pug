@@ -1,10 +1,19 @@
 extend layout
+block navigation
+	div(class='navigation')
+		ul(class='listNavigation')
+			li
+				a(href='/') List tasks
+			li
+				a(class='activeLink', href='/completed') Completed
+
 block title
 	h1.
 		#{ title }
 
 block content
-	ul.list-group
-		each taskCompleted in aCompleted
-			li.list-group-item
-				span= taskCompleted
+	div(class='listCompleted')
+		ul.list-group
+			each taskCompleted in aCompleted
+				li.list-group-item
+					span= taskCompleted

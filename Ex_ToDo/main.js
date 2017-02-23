@@ -3,6 +3,7 @@ const app = express()
 const bodyParser = require('body-parser')
 let aTasks = []
 let aCompleted = []
+let numberTask = 0
 
 app.set( 'view engine', 'pug' )
 
@@ -20,14 +21,14 @@ app.get('/', (req, res) => {
 })
 
 app.get('/done/:id', (req,res) => {
-	aCompleted.push(aTasks[req.params.id].name + " Completed at " + dateHour())
+	aCompleted.push(aTasks[req.params.id].id + ". " + aTasks[req.params.id].name + " Completed at " + dateHour())
 	aTasks.splice(req.params.id,1)
 	res.redirect('/')
 })
 
 app.get('/alldone', (req,res) => {
 	for (var pos = aTasks.length -1; pos >= 0; pos--){
-		aCompleted.push(aTasks[pos].name + " Completed at " + dateHour())
+		aCompleted.push(aTasks[pos].id + ". " + aTasks[pos].name + " Completed at " + dateHour())
 		aTasks.splice(pos,1)
 	}
 	res.redirect('/')
@@ -45,7 +46,8 @@ app.get('/completed', (req, res) => {
 
 app.post('/', (req, res) => {
 	if (req.body.addTask !== "") {
-		aTasks.push({ name : req.body.addTask, create : ("Create at: " + dateHour()) })
+		numberTask += 1
+		aTasks.push({ id : numberTask, name : req.body.addTask, create : ("Create at: " + dateHour()) })
 	}
 	res.redirect('/')
 });

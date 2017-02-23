@@ -1,0 +1,79 @@
+header {
+	margin-left: 30px;
+	font: bold 16px Arial;
+}
+
+body {
+	font: bold 16px Arial;
+	background-color: black;
+	color: white;
+	margin-left: 30px;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	color: grey;
+	text-decoration: none;
+}
+a.activeLink {
+	color: white;
+}
+
+.navigation {
+  width: 400px;
+  border-bottom: 2px solid grey;
+}
+
+.listNavigation {
+	width: 200px;
+	display: flex;
+  justify-content: space-between;
+}
+
+.listTask {
+	color: grey;
+}
+
+.listCompleted {
+	color: grey;
+	text-decoration:line-through;
+}
+
+.buttonDone {
+	font: bold 12px Arial;
+  text-decoration: none;
+  background-color: green;
+  color: white;
+  padding: 3px 6px 3px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+
+.buttonDelete {
+	font: bold 12px Arial;
+  text-decoration: none;
+  background-color: red;
+  color: white;
+  padding: 3px 6px 3px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+
+.buttonSubmit {
+	font: bold 12px Arial;
+  text-decoration: none;
+  background-color: blue;
+  color: white;
+  padding: 3px 6px 3px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
