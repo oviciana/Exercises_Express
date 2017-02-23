@@ -1,0 +1,21 @@
+extend layout
+block title
+	h1.
+		#{ title }
+
+block content
+	form(action='/', method='post')
+		a(type='button', href='/alldone') all done
+		|
+		input(type='text', placeholder='Add a new task', name='addTask')
+		|
+		button(type='submit') add
+	p.
+		#{ msgTxt }
+	ul.list-group
+		each task in aTasks
+			li.list-group-item
+				a(type='button', href='/done/' + aTasks.indexOf(task)) done
+				span= task.name
+				span= task.create
+				a(type='button', href='/delete/' + aTasks.indexOf(task)) delete

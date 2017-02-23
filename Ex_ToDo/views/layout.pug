@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title=title
+  style(type='text/css', media='screen').
+    li {
+    list-style: none;
+    }
+  body
+    .header
+      ul
+        li
+          a(href='/') List tasks
+        li
+          a(href='/completed') Completed
+      block title
+      p Welcome to the Todo app by @me.Please enjoy.
+    .main-content
+      block content

@@ -1,0 +1,19 @@
+{
+  "name": "Ex_ToDo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "developer": "set PORT=3005 && nodemon main.js",
+    "start": "set PORT=3005 && node main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "pug": "^2.0.0-beta11"
+  }
+}

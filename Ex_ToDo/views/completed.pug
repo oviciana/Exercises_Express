@@ -1,0 +1,10 @@
+extend layout
+block title
+	h1.
+		#{ title }
+
+block content
+	ul.list-group
+		each taskCompleted in aCompleted
+			li.list-group-item
+				span= taskCompleted
